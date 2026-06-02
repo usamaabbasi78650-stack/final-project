@@ -25,3 +25,6 @@ QuickServe is a comprehensive full-stack service and utility management applicat
 ## Deployment Guide
 - **Frontend (Vercel):** Connect your GitHub repository to Vercel and set the root directory to `frontend`.
 - **Backend (Render):** Create a new Web Service on Render, connect the repo, set the root directory to `backend`, and use `npm start` as the start command.
+
+## Microservices
+- **Payment Service**: A standalone Node.js service running on port 5001 to handle simulated payment processing (located in `microservices/payment-service`).
