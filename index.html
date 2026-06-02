@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe - Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #10b981;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        .hero {
+            padding: 64px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .services-container {
+            padding: 0 48px 64px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .service-card p.desc {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .book-btn {
+            background: #10b981;
+            color: #0f172a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .book-btn:hover {
+            background: #059669;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            QuickServe
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Bookings</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Smart Service & Utility Management</h1>
+        <p>Book verified professionals for home and utility services instantly. Transparent pricing, reliable service.</p>
+    </div>
+
+    <div class="services-container">
+        <!-- Card 1 -->
+        <div class="service-card">
+            <span class="category-tag">Home Services</span>
+            <h3>Expert Electrician</h3>
+            <p class="desc">Wiring repair, fixture installation, and electrical system diagnostics by certified professionals.</p>
+            <div class="card-footer">
+                <span class="price">$50<span style="font-size:0.875rem; color:#94a3b8; font-weight:400;">/hr</span></span>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+            <span class="category-tag">Home Services</span>
+            <h3>Plumbing Repair</h3>
+            <p class="desc">Leak fixes, pipe installation, and emergency plumbing solutions available 24/7.</p>
+            <div class="card-footer">
+                <span class="price">$60<span style="font-size:0.875rem; color:#94a3b8; font-weight:400;">/hr</span></span>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+            <span class="category-tag">Utility Services</span>
+            <h3>Internet Installation</h3>
+            <p class="desc">Fast and reliable router setup, cabling, and network troubleshooting for your home or office.</p>
+            <div class="card-footer">
+                <span class="price">$40<span style="font-size:0.875rem; color:#94a3b8; font-weight:400;">/fixed</span></span>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
