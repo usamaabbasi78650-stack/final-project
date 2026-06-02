@@ -28,3 +28,5 @@ QuickServe is a comprehensive full-stack service and utility management applicat
 
 ## Microservices
 - **Payment Service**: A standalone Node.js service running on port 5001 to handle simulated payment processing (located in `microservices/payment-service`).
+- **AI Recommendation Service**: A standalone Python/Flask service running on port 5002 to generate AI-based service recommendations for users (located in `microservices/recommendation-service`).
+

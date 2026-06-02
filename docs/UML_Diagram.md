@@ -38,3 +38,31 @@ graph TD
     C -- "Writes (1 to Many)" --> R
     S -- "Has (1 to Many)" --> R
 ```
+
+---
+
+## QuickServe Microservice System Architecture
+
+This diagram illustrates how the system's microservices are decoupled and communicate.
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'linear'}}}%%
+graph TD
+    classDef client fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#f8fafc;
+    classDef monolith fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#f8fafc;
+    classDef service fill:#1e293b,stroke:#eab308,stroke-width:2px,color:#f8fafc;
+
+    Client["**Client Frontend**<br/>(Next.js App on Port 3000)"]:::client
+    
+    Monolith["**Main Backend API**<br/>(Express Monolith on Port 5000)"]:::monolith
+    
+    PaymentMS["**Payment Microservice**<br/>(Node/Express Service on Port 5001)"]:::service
+    
+    RecomMS["**AI Recommendation Microservice**<br/>(Python/Flask Service on Port 5002)"]:::service
+
+    %% Communication Flows
+    Client -- "Fetch/Manage Services & Bookings" --> Monolith
+    Client -- "Fetch AI Recommendations" --> RecomMS
+    Monolith -- "Process & Verify Payments (HTTP)" --> PaymentMS
+```
+
